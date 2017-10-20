@@ -1,4 +1,7 @@
 import React from 'react';
+import GamerReviews from '../components/GamerReviews';
+import NewReview from '../components/NewReview';
+
 
 export default class GamerProfile extends React.Component{
     constructor(props){
@@ -16,7 +19,8 @@ export default class GamerProfile extends React.Component{
             friendScore: 0,
             behavScore: 0,
             overallScore: 0,
-            reviews: []
+            reviews: [],
+            reviewActive: "test"
         };
     }
                                                                                                                                             
@@ -47,14 +51,17 @@ export default class GamerProfile extends React.Component{
     render() {
         return (
         <div className="page">
+            <div className={this.state.reviewActive}>
+                <NewReview/>
+            </div>
             <div className="profileBlock">
                 <h1 id="username">{this.state.username}</h1>
                 <p className="scoreBlock" id="overall-score">{this.state.overallScore.toFixed(2)}</p>
-                <p className="scoreBlock" id="score-slot1">{this.state.skillScore.toFixed(2) * 10} %</p>
-                <p className="scoreBlock" id="score-slot2">{this.state.teamScore.toFixed(2) * 10} %</p>
-                <p className="scoreBlock" id="score-slot3">{this.state.commScore.toFixed(2) * 10} %</p>
-                <p className="scoreBlock" id="score-slot4">{this.state.playScore.toFixed(2) * 10} %</p>
-                <p className="scoreBlock" id="score-slot5">{this.state.friendScore.toFixed(2) * 10} %</p>
+                <p className="scoreBlock" id="score-slot1">{this.state.skillScore.toFixed(1) * 10} %</p>
+                <p className="scoreBlock" id="score-slot2">{this.state.teamScore.toFixed(1) * 10} %</p>
+                <p className="scoreBlock" id="score-slot3">{this.state.commScore.toFixed(1) * 10} %</p>
+                <p className="scoreBlock" id="score-slot4">{this.state.playScore.toFixed(1) * 10} %</p>
+                <p className="scoreBlock" id="score-slot5">{this.state.friendScore.toFixed(1) * 10} %</p>
                 <p className="scoreBlock" id="score-slot6">{this.state.behavScore.toFixed(1) * 10} %</p>
                 <a className="scoreBlock" href="../reviews/new" id="review-button">Write a Review</a>
                 <div className="tags">
@@ -63,8 +70,20 @@ export default class GamerProfile extends React.Component{
                     <div>Steam ID: {this.state.steamTag}</div>
                 </div>
             </div>
+            <div className="reviewBlock">
+                <ul id="reviews-list">
+                {this.state.reviews.map((review) => {
+                    return <li><GamerReviews review={review}/></li>
+                })}
+                </ul>
+            </div>
         </div>
         );
     }
-
 }
+
+
+
+
+
+
