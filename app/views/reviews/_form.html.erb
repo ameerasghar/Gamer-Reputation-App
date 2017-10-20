@@ -1,0 +1,62 @@
+<%= form_with(model: review, local: true) do |form| %>
+  <% if review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :game %>
+    <%= form.text_field :game, id: :review_game %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skill_score %>
+    <%= form.text_field :skill_score, id: :review_skill_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :teammate_score %>
+    <%= form.text_field :teammate_score, id: :review_teammate_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :communication_score %>
+    <%= form.text_field :communication_score, id: :review_communication_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :behavior_score %>
+    <%= form.text_field :behavior_score, id: :review_behavior_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :friend_score %>
+    <%= form.text_field :friend_score, id: :review_friend_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :play_again_score %>
+    <%= form.text_field :play_again_score, id: :review_play_again_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_field :comments, id: :review_comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_id %>
+    <%= form.text_field :target_id, id: :review_target_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

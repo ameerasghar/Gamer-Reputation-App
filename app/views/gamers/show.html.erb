@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @gamer.username %>
+</p>
+
+<p>
+  <strong>Xbox tag:</strong>
+  <%= @gamer.xbox_tag %>
+</p>
+
+<p>
+  <strong>Psn tag:</strong>
+  <%= @gamer.psn_tag %>
+</p>
+
+<p>
+  <strong>Steam tag:</strong>
+  <%= @gamer.steam_tag %>
+</p>
+
+<p>
+  <strong>Skill rating:</strong>
+  <%= @gamer.skill_rating %>
+</p>
+
+<p>
+  <strong>Teammate rating:</strong>
+  <%= @gamer.teammate_rating %>
+</p>
+
+<p>
+  <strong>Communication rating:</strong>
+  <%= @gamer.communication_rating %>
+</p>
+
+<p>
+  <strong>Behavior rating:</strong>
+  <%= @gamer.behavior_rating %>
+</p>
+
+<p>
+  <strong>Friend rating:</strong>
+  <%= @gamer.friend_rating %>
+</p>
+
+<p>
+  <strong>Play again rating:</strong>
+  <%= @gamer.play_again_rating %>
+</p>
+
+<p>
+  <strong>Overall rating:</strong>
+  <%= @gamer.overall_rating %>
+</p>
+
+<%= link_to 'Edit', edit_gamer_path(@gamer) %> |
+<%= link_to 'Back', gamers_path %>

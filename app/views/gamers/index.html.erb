@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gamers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Xbox tag</th>
+      <th>Psn tag</th>
+      <th>Steam tag</th>
+      <th>Skill rating</th>
+      <th>Teammate rating</th>
+      <th>Communication rating</th>
+      <th>Behavior rating</th>
+      <th>Friend rating</th>
+      <th>Play again rating</th>
+      <th>Overall rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gamers.each do |gamer| %>
+      <tr>
+        <td><%= gamer.username %></td>
+        <td><%= gamer.xbox_tag %></td>
+        <td><%= gamer.psn_tag %></td>
+        <td><%= gamer.steam_tag %></td>
+        <td><%= gamer.skill_rating %></td>
+        <td><%= gamer.teammate_rating %></td>
+        <td><%= gamer.communication_rating %></td>
+        <td><%= gamer.behavior_rating %></td>
+        <td><%= gamer.friend_rating %></td>
+        <td><%= gamer.play_again_rating %></td>
+        <td><%= gamer.overall_rating %></td>
+        <td><%= link_to 'Show', gamer %></td>
+        <td><%= link_to 'Edit', edit_gamer_path(gamer) %></td>
+        <td><%= link_to 'Destroy', gamer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gamer', new_gamer_path %>

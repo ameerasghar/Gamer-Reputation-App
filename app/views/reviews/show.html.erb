@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @review.game %>
+</p>
+
+<p>
+  <strong>Skill score:</strong>
+  <%= @review.skill_score %>
+</p>
+
+<p>
+  <strong>Teammate score:</strong>
+  <%= @review.teammate_score %>
+</p>
+
+<p>
+  <strong>Communication score:</strong>
+  <%= @review.communication_score %>
+</p>
+
+<p>
+  <strong>Behavior score:</strong>
+  <%= @review.behavior_score %>
+</p>
+
+<p>
+  <strong>Friend score:</strong>
+  <%= @review.friend_score %>
+</p>
+
+<p>
+  <strong>Play again score:</strong>
+  <%= @review.play_again_score %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @review.comments %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @review.target_id %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

@@ -1,0 +1,72 @@
+<%= form_with(model: gamer, local: true) do |form| %>
+  <% if gamer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gamer.errors.count, "error") %> prohibited this gamer from being saved:</h2>
+
+      <ul>
+      <% gamer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :gamer_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :xbox_tag %>
+    <%= form.text_field :xbox_tag, id: :gamer_xbox_tag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :psn_tag %>
+    <%= form.text_field :psn_tag, id: :gamer_psn_tag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :steam_tag %>
+    <%= form.text_field :steam_tag, id: :gamer_steam_tag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skill_rating %>
+    <%= form.text_field :skill_rating, id: :gamer_skill_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :teammate_rating %>
+    <%= form.text_field :teammate_rating, id: :gamer_teammate_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :communication_rating %>
+    <%= form.text_field :communication_rating, id: :gamer_communication_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :behavior_rating %>
+    <%= form.text_field :behavior_rating, id: :gamer_behavior_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :friend_rating %>
+    <%= form.text_field :friend_rating, id: :gamer_friend_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :play_again_rating %>
+    <%= form.text_field :play_again_rating, id: :gamer_play_again_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overall_rating %>
+    <%= form.text_field :overall_rating, id: :gamer_overall_rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
