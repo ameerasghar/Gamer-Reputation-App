@@ -1,6 +1,7 @@
 import React from 'react';
 import GamerReviews from '../components/GamerReviews';
 import NewReview from '../components/NewReview';
+import FindPlayer from '../components/FindPlayer';
 
 
 export default class GamerProfile extends React.Component{
@@ -20,11 +21,12 @@ export default class GamerProfile extends React.Component{
             behavScore: 0,
             overallScore: 0,
             reviews: [],
-            reviewActive: "test"
+            inActive: "hidden"
         };
     }
                                                                                                                                             
     componentDidMount(){
+        event.preventDefault();
         $.ajax({
             url: '/gamers/1',
             type: 'GET' 
@@ -50,9 +52,11 @@ export default class GamerProfile extends React.Component{
 
     render() {
         return (
-        <div className="page">
-            <div className={this.state.reviewActive}>
-                <NewReview/>
+            <div className="test-area">
+            <FindPlayer/>
+        <div className={this.state.inActive}>
+            <div className="reviews">
+                <NewReview target={this.state.id}/>
             </div>
             <div className="profileBlock">
                 <h1 id="username">{this.state.username}</h1>
@@ -77,6 +81,7 @@ export default class GamerProfile extends React.Component{
                 })}
                 </ul>
             </div>
+        </div>
         </div>
         );
     }

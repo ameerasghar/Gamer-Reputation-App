@@ -4,14 +4,14 @@ export default class NewReview extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            skillScore: 1,
-            teamScore: 1,
-            commScore: 1,
-            playScore: 1,
-            behavScore: 1,
-            friendScore: 1,
+            skillScore: 10,
+            teamScore: 10,
+            commScore: 10,
+            playScore: 10,
+            behavScore: 10,
+            friendScore: 10,
             game: "",
-            target_id: "",
+            target_id: props.target.id,
             comments: ""
         }
         this.updateGame = this.updateGame.bind(this);
@@ -22,6 +22,7 @@ export default class NewReview extends React.Component {
         this.updateFriend = this.updateFriend.bind(this);
         this.updatePlay = this.updatePlay.bind(this);
         this.updateComments = this.updateComments.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     updateGame(event){
@@ -62,20 +63,19 @@ export default class NewReview extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
-        skill = this.state.skillScore;
-        team = this.state.teamScore;
-        comm = this.state.commScore;
-        play = this.state.playScore;
-        behav = this.state.behavScore;
-        friend = this.state.friendScore;
-        comments = this.state.comments;
-        target = this.state.target_id;
-        game = this.state.game;
-        debugger;
+        var skill = this.state.skillScore;
+        var team = this.state.teamScore;
+        var comm = this.state.commScore;
+        var play = this.state.playScore;
+        var behav = this.state.behavScore;
+        var friend = this.state.friendScore;
+        var comments = this.state.comments;
+        var target = this.state.target_id;
+        var game = this.state.game;
          $.ajax({
             url: '/reviews',
             method: 'POST',
-            data: {review: {skill_score: skill, teammate_score: team, communication_score: comm, play_again: play, behavior_score: behav, friend_score: friend,  comments: comments, target_id: 1, game: game}}
+            data: {review: {skill_score: skill, teammate_score: team, communication_score: comm, play_again_score: play, behavior_score: behav, friend_score: friend,  comments: comments, target_id: 1, game: game}}
         }).done((response) => {
          })
 
@@ -91,7 +91,7 @@ export default class NewReview extends React.Component {
                 </div>
                 <div className="form-slot">
                     This player... <br/>
-                    <select value={this.state.value} onChange={this.updateSkill}>
+                    <select value={this.state.skillScore} onChange={this.updateSkill}>
                         <option value="10">is one of the highest skilled players I have ever played with</option>
                         <option value="8">Is not the best player I have played with, but is still quite skilled</option>
                         <option value="5">is pretty average skill wise</option>
@@ -100,7 +100,7 @@ export default class NewReview extends React.Component {
                 </div>
                 <div className="form-slot">
                     This player... <br/>
-                    <select value={this.state.value} onChange={this.updateTeam}>
+                    <select value={this.state.teamScore} onChange={this.updateTeam}>
                         <option value="10">was a leader on our team and helped bring out the best of the team</option>
                         <option value="8">was an integral member of the team and made significant contributions</option>
                         <option value="5">shows promise of good teamwork but lacks consistency</option>
@@ -109,7 +109,7 @@ export default class NewReview extends React.Component {
                 </div>
                 <div className="form-slot">
                     This player... <br/>
-                    <select value={this.state.value} onChange={this.updateComm}>
+                    <select value={this.state.commScore} onChange={this.updateComm}>
                         <option value="10">was active on communictions and helped coordinte the team</option>
                         <option value="8">could have been more active but still listened to the team</option>
                         <option value="5">did not communicate, but was not expected to.</option>
@@ -119,7 +119,7 @@ export default class NewReview extends React.Component {
                 </div>
                 <div className="form-slot">
                     This player... <br/>
-                    <select value={this.state.value} onChange={this.updateBehav}>
+                    <select value={this.state.behavScore} onChange={this.updateBehav}>
                         <option value="10">was friendly and positive to others</option>
                         <option value="1">was negative and rude to other players</option>
                         <option value="5">was neutral to other players</option>
@@ -127,7 +127,7 @@ export default class NewReview extends React.Component {
                 </div>
                 <div className="form-slot">
                     This player... <br/>
-                    <select value={this.state.value} onChange={this.updateFriend}>
+                    <select value={this.state.friendScore} onChange={this.updateFriend}>
                         <option value="10">was already my friend before</option>
                         <option value="10">is my friend because of this game</option>
                         <option value="1">is not my friend</option>
@@ -135,7 +135,7 @@ export default class NewReview extends React.Component {
                 </div>
                 <div className="form-slot">
                     I would... <br/>
-                    <select value={this.state.value} onChange={this.updatePlay}>
+                    <select value={this.state.playScore} onChange={this.updatePlay}>
                         <option value="1">not play with this person again</option>
                         <option value="10">play with this person again</option>
                     </select>
