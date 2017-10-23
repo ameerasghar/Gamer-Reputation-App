@@ -85,13 +85,13 @@ export default class NewReview extends React.Component {
     render() {
         return (
             <form className="form-block"  onSubmit={this.handleSubmit}>
-            <h1> Review of {this.props.targetUsername}</h1>
+            <h1> New Review </h1>
                 <div className="form-slot">
                     <div id="label">What game did you play?</div>
                     <input type="text" onChange={this.updateGame}className="form-input"/>
                 </div>
                 <div className="form-slot">
-                    This player... <br/>
+                    This player...
                     <select value={this.state.skillScore} onChange={this.updateSkill}>
                         <option value="10">is one of the highest skilled players I have ever played with</option>
                         <option value="8">Is not the best player I have played with, but is still quite skilled</option>
@@ -100,7 +100,7 @@ export default class NewReview extends React.Component {
                     </select>
                 </div>
                 <div className="form-slot">
-                    This player... <br/>
+                    This player... 
                     <select value={this.state.teamScore} onChange={this.updateTeam}>
                         <option value="10">was a leader on our team and helped bring out the best of the team</option>
                         <option value="8">was an integral member of the team and made significant contributions</option>
@@ -109,7 +109,7 @@ export default class NewReview extends React.Component {
                     </select>
                 </div>
                 <div className="form-slot">
-                    This player... <br/>
+                    This player...
                     <select value={this.state.commScore} onChange={this.updateComm}>
                         <option value="10">was active on communictions and helped coordinte the team</option>
                         <option value="8">could have been more active but still listened to the team</option>
@@ -119,7 +119,7 @@ export default class NewReview extends React.Component {
                     </select>
                 </div>
                 <div className="form-slot">
-                    This player... <br/>
+                    This player... 
                     <select value={this.state.behavScore} onChange={this.updateBehav}>
                         <option value="10">was friendly and positive to others</option>
                         <option value="1">was negative and rude to other players</option>
@@ -127,7 +127,7 @@ export default class NewReview extends React.Component {
                     </select>
                 </div>
                 <div className="form-slot">
-                    This player... <br/>
+                    This player... 
                     <select value={this.state.friendScore} onChange={this.updateFriend}>
                         <option value="10">was already my friend before</option>
                         <option value="10">is my friend because of this game</option>
@@ -135,7 +135,7 @@ export default class NewReview extends React.Component {
                     </select>
                 </div>
                 <div className="form-slot">
-                    I would... <br/>
+                    I would... 
                     <select value={this.state.playScore} onChange={this.updatePlay}>
                         <option value="1">not play with this person again</option>
                         <option value="10">play with this person again</option>
@@ -144,7 +144,7 @@ export default class NewReview extends React.Component {
                 <div className="form-slot">
                     <textarea name="comment" rows="4" cols="40" onChange={this.updateComments} placeholder="Tell us more about this player..."></textarea>
                 </div><br/>
-                <input id="submit" type="submit"/>
+                <input id="submit" value="Submit Your Review" type="submit"/>
             </form>
             );
     }

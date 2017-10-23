@@ -55,12 +55,12 @@ export default class GamerProfile extends React.Component{
             <div className="profileBlock">
                 <h1 id="username">{this.state.username}</h1>
                 <p className="scoreBlock" id="overall-score">{this.state.overallScore.toFixed(2)}</p>
-                <p className="scoreBlock" id="score-slot1">{this.state.skillScore.toFixed(1) * 10} %</p>
-                <p className="scoreBlock" id="score-slot2">{this.state.teamScore.toFixed(1) * 10} %</p>
-                <p className="scoreBlock" id="score-slot3">{this.state.commScore.toFixed(1) * 10} %</p>
-                <p className="scoreBlock" id="score-slot4">{this.state.playScore.toFixed(1) * 10} %</p>
-                <p className="scoreBlock" id="score-slot5">{this.state.friendScore.toFixed(1) * 10} %</p>
-                <p className="scoreBlock" id="score-slot6">{this.state.behavScore.toFixed(1) * 10} %</p>
+                <p className="scoreBlock" id="score-slot1">{this.state.skillScore.toFixed(2)} </p>
+                <p className="scoreBlock" id="score-slot2">{this.state.teamScore.toFixed(2)} </p>
+                <p className="scoreBlock" id="score-slot3">{this.state.commScore.toFixed(2)} </p>
+                <p className="scoreBlock" id="score-slot4">{this.state.behavScore.toFixed(2)}</p>
+                <p className="scoreBlock" id="score-slot5">{this.state.friendScore.toFixed(2)} </p>
+                <p className="scoreBlock" id="score-slot6">{this.state.playScore.toFixed(2)}</p>
                 <a className="scoreBlock" onClick={this.props.tabHandler} id="review-button">Write a Review</a>
                 <div className="tags">
                     <div>Xbox ID: {this.state.xboxTag} </div>

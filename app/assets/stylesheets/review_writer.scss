@@ -1,7 +1,7 @@
 .form-block{
 	position: absolute;
 	background-color: #bdc3c7;
-	top:10%;
+	top:12%;
 	left: 10%;
 	width:75%;
 	height:85%;
@@ -17,7 +17,6 @@
 	top: 1%;
 	width: 60%;
 	left: 10%;
-	margin-top: 2%;
 	height: 10%;
 	border-radius: 10%;
 	text-align: left;
@@ -46,6 +45,10 @@
 }
 
 #submit{
+	position: absolute;
+	right: 10%;
+	top: 40%;
+	width: 25%;
 	font-size: 48px;
 }
 

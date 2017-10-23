@@ -11,9 +11,9 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <ul className="navBar">
-                <div> LOGO </div>
-                <div> letsPlay </div>
-                <div onClick={this.props.tabHandler}> Link to Find Player </div>
+                <a onClick={this.props.tabHandler}> Find a Player </a>
+                <div id="version-info"> GamerRep Demo Build 0.7 </div>
+                <div id="version-info"> created by Ben Behrman </div>
             </ul>
             );
     }

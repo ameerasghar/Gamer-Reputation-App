@@ -18,12 +18,12 @@ class Gamer < ApplicationRecord
             ratings[:friend] += r.friend_score
             ratings[:play_again] += r.play_again_score
         end
-        ratings[:skill] = ratings[:skill] / total_review_number
-        ratings[:communication] = ratings[:skill] / total_review_number
-        ratings[:teammate] = ratings[:teammate] / total_review_number
-        ratings[:behavior] = ratings[:behavior] / total_review_number
-        ratings[:friend] = ratings[:friend] / total_review_number
-        ratings[:play_again] = ratings[:play_again] / total_review_number
+        ratings[:skill] = ratings[:skill] / (total_review_number * 10)
+        ratings[:communication] = ratings[:communication] / (total_review_number * 10)
+        ratings[:teammate] = ratings[:teammate] / (total_review_number * 10)
+        ratings[:behavior] = ratings[:behavior] / (total_review_number * 10)
+        ratings[:friend] = ratings[:friend] / (total_review_number * 10)
+        ratings[:play_again] = ratings[:play_again] / (total_review_number * 10)
         return ratings
     end
 

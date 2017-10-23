@@ -32,12 +32,12 @@ export default class FindPlayer extends React.Component {
     render() {
         return (
             <div className="findBlock">
+                <div className="Welcome"> Welcome to GamerRep </div>
                 <div className="searchBar" onChange={this.handleSearch}>
                     <input type="text" value={this.state.value} rows="60" placeholder="Find a player..."/>
                 </div>
                 <div className="resultBox">
                     <ul id="results-list">
-                    Results:
                     {this.state.results.map((gamer, id) => {
                         return <SearchResult key={id} gamer={gamer} tabHandler={this.props.tabHandler}/>
                     })}

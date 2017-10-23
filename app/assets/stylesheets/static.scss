@@ -4,6 +4,7 @@
 
 html{
     background-color: #1A2733;
+    overflow: hidden;
 }
 
 .navBar{
@@ -15,16 +16,26 @@ html{
     color: white;
     width: 100%;
     margin: 0;
-    height: 9%;
+    height: 10%;
+    box-shadow: -5px 10px 10px #000000;
 }
-.navBar div{
+.navBar a{
     display: inline;
     font-size: 36px;
+}
+
+.navBar a:hover{
+    cursor: pointer;
+}
+
+#version-info{
+    font-size: 12px;
+
 }
 .profileBlock{
   position: absolute;
   left: 5%;
-  top: 7%;
+  top: 12%;
   color: white;
   background-color: #bdc3c7;
   border: 5px solid black;
@@ -106,13 +117,13 @@ html{
 
 #review-button{
   position: absolute;
-  top:70%;
-  width: 19.9%;
+  top: 70%;
+  width: 19.85%;
   left: 5%;
   height: 20%;
   border: 1px solid black;
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -121,6 +132,7 @@ html{
   left: 40%;
   top: 5%;
   font-size: 48px;
+  color: black;
 }
 
 .tags{
@@ -128,6 +140,7 @@ html{
   left: 40%;
   bottom: 13%;
   font-size: 24px;
+  color: black;
 }
 
 .reviewBlock{
@@ -135,7 +148,7 @@ html{
     padding: 0;
   position: absolute;
   left: 5%;
-  top: 49%;
+  top: 54%;
   color: white;
   background-color: #bdc3c7;
   border: 5px solid black;
@@ -189,7 +202,7 @@ html{
 .findBlock{
   position: absolute;
   background-color: #bdc3c7;
-  top:10%;
+  top: 12%;
   left: 10%;
   width:75%;
   height:85%;
@@ -198,6 +211,12 @@ html{
   box-shadow: 10px 10px 5px #000000;
   text-align: left;
   overflow-y: auto;
+}
+
+.Welcome{
+    position: relative;
+    font-size: 64px;
+    text-align: center;
 }
 
 .searchBar{
@@ -214,9 +233,14 @@ html{
 .resultBox{
     position: absolute;
     top: 30%;
-    left: 20%;
+    left: 16%;
     width: 60%;
     font-size: 36px;
+    list-style-type: none;
+}
+
+.searchResult div:hover{
+    cursor: pointer;
 }
 
 .hidden{
