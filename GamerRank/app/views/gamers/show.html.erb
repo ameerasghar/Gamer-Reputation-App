@@ -1,7 +1,0 @@
-<%= react_component("Profile",  { data: @gamer }) %>
-<div class="reviewBlock">
-	<h1 id="title">Reviews of <%=@gamer.username%></h1>
-	<% @reviews.each do |r| %>
-		<%= react_component("Review_Collection", {data: r}) %>
-	<%end%>
-</div>
