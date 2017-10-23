@@ -2,7 +2,7 @@
 # README
 Last Updated: 10/23/17
 Live Application Demo: https://gamerrep.herokuapp.com/index
-Work in Progress
+
 
 This is a demo application of a Gamer Review System.
 
