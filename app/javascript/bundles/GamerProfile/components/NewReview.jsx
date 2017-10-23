@@ -63,6 +63,7 @@ export default class NewReview extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
+        this.props.tabHandler();
         var skill = this.state.skillScore;
         var team = this.state.teamScore;
         var comm = this.state.commScore;
@@ -143,7 +144,7 @@ export default class NewReview extends React.Component {
                 <div className="form-slot">
                     <textarea name="comment" rows="4" cols="40" onChange={this.updateComments} placeholder="Tell us more about this player..."></textarea>
                 </div><br/>
-                <input id="submit" onClick={this.props.tabHandler} type="submit"/>
+                <input id="submit" type="submit"/>
             </form>
             );
     }
