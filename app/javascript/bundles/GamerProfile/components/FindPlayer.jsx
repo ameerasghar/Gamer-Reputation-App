@@ -17,6 +17,7 @@ export default class FindPlayer extends React.Component {
         event.preventDefault();
         this.setState({searchValue: event.target.value});
         var search = this.state.searchValue;
+        debugger;
         $.ajax({
             url: '/static/search',
             type: 'POST',
