@@ -9,7 +9,7 @@ class StaticController < ApplicationController
         all_gamers = Gamer.all.select(:id, :username)
         found_gamers = []
         all_gamers.each do |g| 
-            if g.username.starts_with?(search_data)
+            if g.username.include?(search_data)
                 found_gamers << g
             end
         end

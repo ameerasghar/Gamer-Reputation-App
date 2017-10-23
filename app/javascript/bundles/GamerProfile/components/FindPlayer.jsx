@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResult from '../components/SearchResult';
 
 export default class FindPlayer extends React.Component {
     constructor(props){
@@ -6,9 +7,10 @@ export default class FindPlayer extends React.Component {
         this.state = {
             searchValue: "",
             results: [],
-            activeState: false
+            active: props.active
         };
         this.handleSearch = this.handleSearch.bind(this);
+
     }
 
     handleSearch(event){
@@ -35,8 +37,9 @@ export default class FindPlayer extends React.Component {
                 </div>
                 <div className="resultBox">
                     <ul id="results-list">
-                    {this.state.results.map((gamer) => {
-                        return <li> {gamer.username} </li>
+                    Results:
+                    {this.state.results.map((gamer, id) => {
+                        return <SearchResult key={id} gamer={gamer} tabHandler={this.props.tabHandler}/>
                     })}
                     </ul>
                 </div>

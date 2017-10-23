@@ -1,7 +1,5 @@
 import React from 'react';
 import GamerReviews from '../components/GamerReviews';
-import NewReview from '../components/NewReview';
-import FindPlayer from '../components/FindPlayer';
 
 
 export default class GamerProfile extends React.Component{
@@ -21,14 +19,15 @@ export default class GamerProfile extends React.Component{
             behavScore: 0,
             overallScore: 0,
             reviews: [],
-            inActive: "hidden"
+            active: props.active
         };
     }
                                                                                                                                             
     componentDidMount(){
         event.preventDefault();
+        var targetId = this.props.targetId;
         $.ajax({
-            url: '/gamers/1',
+            url: '/gamers/' + targetId,
             type: 'GET' 
         })
         .done((gamerResponse) => {
@@ -52,12 +51,7 @@ export default class GamerProfile extends React.Component{
 
     render() {
         return (
-            <div className="test-area">
-            <FindPlayer/>
-        <div className={this.state.inActive}>
-            <div className="reviews">
-                <NewReview target={this.state.id}/>
-            </div>
+            <div className="profile">
             <div className="profileBlock">
                 <h1 id="username">{this.state.username}</h1>
                 <p className="scoreBlock" id="overall-score">{this.state.overallScore.toFixed(2)}</p>
@@ -67,7 +61,7 @@ export default class GamerProfile extends React.Component{
                 <p className="scoreBlock" id="score-slot4">{this.state.playScore.toFixed(1) * 10} %</p>
                 <p className="scoreBlock" id="score-slot5">{this.state.friendScore.toFixed(1) * 10} %</p>
                 <p className="scoreBlock" id="score-slot6">{this.state.behavScore.toFixed(1) * 10} %</p>
-                <a className="scoreBlock" href="../reviews/new" id="review-button">Write a Review</a>
+                <a className="scoreBlock" onClick={this.props.tabHandler} id="review-button">Write a Review</a>
                 <div className="tags">
                     <div>Xbox ID: {this.state.xboxTag} </div>
                     <div>PSN ID: {this.state.psnTag}</div>
@@ -81,7 +75,6 @@ export default class GamerProfile extends React.Component{
                 })}
                 </ul>
             </div>
-        </div>
         </div>
         );
     }

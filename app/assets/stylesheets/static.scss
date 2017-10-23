@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html{
+    background-color: #1A2733;
+}
 .profileBlock{
   position: absolute;
   left: 5%;
@@ -177,19 +180,27 @@
   border: 1px black solid;
   border-radius: 10%;
   box-shadow: 10px 10px 5px #000000;
-  text-align: center;
+  text-align: left;
   overflow-y: auto;
 }
 
 .searchBar{
   position: absolute;
-  top: 45%;
+  top: 15%;
   left: 20%;
 }
 
 .searchBar input[type=text]{
   font-size: 36px;
-  width: 150%;
+  width: 175%;
+}
+
+.resultBox{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    font-size: 36px;
 }
 
 .hidden{

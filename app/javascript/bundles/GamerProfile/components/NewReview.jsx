@@ -11,8 +11,8 @@ export default class NewReview extends React.Component {
             behavScore: 10,
             friendScore: 10,
             game: "",
-            target_id: props.target.id,
-            comments: ""
+            target_id: props.targetId,
+            comments: "",
         }
         this.updateGame = this.updateGame.bind(this);
         this.updateSkill = this.updateSkill.bind(this);
@@ -83,8 +83,8 @@ export default class NewReview extends React.Component {
 
     render() {
         return (
-            <form className="form-block" onSubmit={this.handleSubmit}>
-            <h1> Review For insert username here</h1>
+            <form className="form-block"  onSubmit={this.handleSubmit}>
+            <h1> Review of {this.props.targetUsername}</h1>
                 <div className="form-slot">
                     <div id="label">What game did you play?</div>
                     <input type="text" onChange={this.updateGame}className="form-input"/>
@@ -143,7 +143,7 @@ export default class NewReview extends React.Component {
                 <div className="form-slot">
                     <textarea name="comment" rows="4" cols="40" onChange={this.updateComments} placeholder="Tell us more about this player..."></textarea>
                 </div><br/>
-                <input id="submit" type="submit"/>
+                <input id="submit" onClick={this.props.tabHandler} type="submit"/>
             </form>
             );
     }
